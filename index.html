@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>وب‌سایت شخصی | پنل مدیریت کامل</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,9 +16,10 @@
             background-color: #0b0f19;
             color: #f3f4f6;
             overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -30,126 +31,129 @@
             border: 1px solid rgba(255, 255, 255, 0.07);
             transition: all 0.3s ease;
         }
-        .glass-card:hover {
-            border-color: rgba(168, 85, 247, 0.4);
-            transform: translateY(-4px);
-        }
         .glow-bg {
             position: fixed;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(100px);
             pointer-events: none;
             z-index: 0;
-            opacity: 0.35;
+            opacity: 0.3;
         }
     </style>
 </head>
 <body class="relative min-h-screen selection:bg-purple-500 selection:text-white">
 
-    <!-- Background Animated Glows -->
-    <div class="glow-bg bg-purple-600 top-[-100px] right-[-100px] animate-pulse"></div>
-    <div class="glow-bg bg-blue-600 bottom-[-100px] left-[-100px] animate-pulse" style="animation-delay: 2s;"></div>
+    <!-- Glowing Backgrounds -->
+    <div class="glow-bg bg-purple-600 top-[-50px] right-[-50px] animate-pulse"></div>
+    <div class="glow-bg bg-blue-600 bottom-[-50px] left-[-50px] animate-pulse" style="animation-delay: 2s;"></div>
 
-    <!-- Floating Glass Navbar -->
-    <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-6xl">
-        <div class="glass rounded-full px-6 py-3 flex items-center justify-between shadow-2xl">
-            <span class="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
+    <!-- Responsive Floating Glass Navbar -->
+    <nav class="fixed top-3 left-1/2 -translate-x-1/2 z-40 w-[94%] max-w-6xl">
+        <div class="glass rounded-2xl md:rounded-full px-4 py-3 flex items-center justify-between shadow-2xl">
+            <span class="text-lg md:text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
                 PORTFOLIO
             </span>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-6 space-x-reverse text-sm font-medium text-gray-300">
                 <a href="#hero" class="hover:text-purple-400 transition-colors">خانه</a>
                 <a href="#about" class="hover:text-purple-400 transition-colors">درباره من</a>
                 <a href="#skills" class="hover:text-purple-400 transition-colors">مهارت‌ها</a>
                 <a href="#contact" class="hover:text-purple-400 transition-colors">تماس</a>
-                <!-- Admin Button -->
-                <button onclick="openAdminModal()" class="flex items-center gap-1 text-purple-400 hover:text-purple-300 transition-colors font-bold border-r border-white/10 pr-4">
+                <button onclick="openAdminModal()" class="flex items-center gap-1 text-purple-400 hover:text-purple-300 border-r border-white/10 pr-4 font-bold">
                     <i data-lucide="settings" class="w-4 h-4"></i>
                     <span>مدیریت</span>
                 </button>
             </div>
-            <a href="#contact" class="px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all shadow-lg shadow-purple-500/25">
-                ارتباط سریع
-            </a>
+
+            <div class="hidden md:block">
+                <a href="#contact" class="px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all shadow-lg shadow-purple-500/25">
+                    ارتباط سریع
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-white p-1">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass rounded-2xl mt-2 p-5 space-y-4 shadow-2xl border border-white/10">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">خانه</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">درباره من</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">مهارت‌ها</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">تماس</a>
+            <hr class="border-white/10">
+            <button onclick="toggleMobileMenu(); openAdminModal();" class="w-full text-right flex items-center gap-2 text-purple-400 font-bold py-1">
+                <i data-lucide="settings" class="w-4 h-4"></i>
+                <span>ورود به پنل مدیریت</span>
+            </button>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-20 space-y-28">
+    <!-- Main Mobile Optimized Container -->
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 md:pt-36 pb-16 space-y-20 md:space-y-28">
 
         <!-- Hero Section -->
-        <section id="hero" class="flex flex-col items-center text-center space-y-6 pt-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-purple-500/30 text-purple-300 text-sm">
-                <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+        <section id="hero" class="flex flex-col items-center text-center space-y-5 pt-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-purple-500/30 text-purple-300 text-xs md:text-sm">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-400"></i>
                 <span id="display-badge">خوش آمدید | رزومه و وب‌سایت تعاملی</span>
             </div>
             
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight max-w-4xl" id="display-title">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight max-w-4xl" id="display-title">
                 طراحی و توسعه تجربه‌های مدرن دیجیتال
             </h1>
             
-            <p class="text-lg text-gray-400 max-w-2xl leading-relaxed" id="display-bio">
+            <p class="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl leading-relaxed" id="display-bio">
                 علاقه‌مند به خلق ایده‌های نوآورانه، برنامه‌نویسی وب و توسعه رابط‌های کاربری چشم‌نواز با استانداردهای روز دنیای وب.
             </p>
 
-            <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <a href="#contact" class="px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:opacity-95 transition-all shadow-xl shadow-purple-600/30">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto pt-2">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:opacity-95 transition-all shadow-xl shadow-purple-600/30 text-center text-sm md:text-base">
                     ارتباط با من
                 </a>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="space-y-6">
-            <div class="text-center space-y-2">
-                <h2 class="text-3xl font-extrabold text-white">درباره من</h2>
-                <p class="text-gray-400 text-sm">مسیر حرفه‌ای و رویکرد کاری</p>
+        <section id="about" class="space-y-5">
+            <div class="text-center space-y-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white">درباره من</h2>
+                <p class="text-gray-400 text-xs md:text-sm">مسیر حرفه‌ای و رویکرد کاری</p>
             </div>
 
-            <div class="glass-card rounded-3xl p-8 space-y-4">
-                <p class="text-gray-300 leading-relaxed text-lg" id="display-about-text">
+            <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 space-y-3">
+                <p class="text-gray-300 leading-relaxed text-sm md:text-base text-justify md:text-right" id="display-about-text">
                     با تمرکز بر توسعه وب و به‌کارگیری ابزارهای پیشرفته، هدف من ارائه راه‌حل‌های هوشمندانه، کاربردی و پرسرعت برای پروژه‌های گوناگون است. همواره در حال یادگیری فناوری‌های جدید و بهبود مهارت‌های فنی هستم.
                 </p>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="space-y-6">
-            <div class="text-center space-y-2">
-                <h2 class="text-3xl font-extrabold text-white">مهارت‌های تخصصی</h2>
-                <p class="text-gray-400 text-sm">ابزارها و دانش فنی</p>
+        <section id="skills" class="space-y-5">
+            <div class="text-center space-y-1">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white">مهارت‌های تخصصی</h2>
+                <p class="text-gray-400 text-xs md:text-sm">ابزارها و دانش فنی</p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="skills-container">
-                <div class="glass-card rounded-2xl p-5 text-center space-y-2">
-                    <i data-lucide="code" class="w-7 h-7 text-purple-400 mx-auto"></i>
-                    <h4 class="font-bold text-white">HTML / CSS / JS</h4>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center space-y-2">
-                    <i data-lucide="layout" class="w-7 h-7 text-blue-400 mx-auto"></i>
-                    <h4 class="font-bold text-white">Tailwind CSS</h4>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center space-y-2">
-                    <i data-lucide="git-branch" class="w-7 h-7 text-pink-400 mx-auto"></i>
-                    <h4 class="font-bold text-white">Git & GitHub</h4>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center space-y-2">
-                    <i data-lucide="cpu" class="w-7 h-7 text-emerald-400 mx-auto"></i>
-                    <h4 class="font-bold text-white">AI Tools</h4>
-                </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4" id="skills-container">
+                <!-- Skills Render Here -->
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="space-y-6">
-            <div class="glass-card rounded-3xl p-8 md:p-10 border border-purple-500/20">
-                <div class="max-w-2xl space-y-6">
-                    <h2 class="text-3xl font-black text-white">راه‌های ارتباطی</h2>
-                    <div class="flex flex-wrap gap-4" id="contact-container">
-                        <a id="display-email-link" href="mailto:vadelvadelian@gmail.com" class="glass px-6 py-3 rounded-xl flex items-center gap-3 hover:bg-white/10 transition-all">
-                            <i data-lucide="mail" class="w-5 h-5 text-purple-400"></i>
-                            <span id="display-email">vadelvadelian@gmail.com</span>
+        <section id="contact" class="space-y-5">
+            <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 border border-purple-500/20">
+                <div class="max-w-2xl space-y-4 text-center md:text-right">
+                    <h2 class="text-2xl md:text-3xl font-black text-white">راه‌های ارتباطی</h2>
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2" id="contact-container">
+                        <a id="display-email-link" href="mailto:vadelvadelian@gmail.com" class="glass px-5 py-3 rounded-xl flex items-center justify-center md:justify-start gap-3 hover:bg-white/10 transition-all text-xs md:text-sm">
+                            <i data-lucide="mail" class="w-4 h-4 text-purple-400"></i>
+                            <span id="display-email" class="break-all">vadelvadelian@gmail.com</span>
                         </a>
                     </div>
                 </div>
@@ -159,92 +163,92 @@
     </main>
 
     <!-- ADMIN MODAL -->
-    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass border border-purple-500/30 rounded-3xl p-6 md:p-8 w-full max-w-2xl relative max-h-[90vh] overflow-y-auto">
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
+        <div class="glass border border-purple-500/30 rounded-2xl md:rounded-3xl p-5 md:p-8 w-full max-w-xl relative max-h-[92vh] overflow-y-auto">
             
-            <button onclick="closeAdminModal()" class="absolute top-5 left-5 text-gray-400 hover:text-white">
-                <i data-lucide="x" class="w-6 h-6"></i>
+            <button onclick="closeAdminModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white p-1">
+                <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6"></i>
             </button>
 
             <!-- Login Section -->
-            <div id="login-section" class="space-y-6 py-4">
-                <div class="text-center space-y-2">
-                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                        <i data-lucide="lock" class="w-6 h-6"></i>
+            <div id="login-section" class="space-y-5 py-2">
+                <div class="text-center space-y-1">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 text-purple-400 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="lock" class="w-5 h-5 md:w-6 md:h-6"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white">ورود به پنل مدیریت سایت</h3>
-                    <p class="text-sm text-gray-400">لطفاً ایمیل و رمز عبور مدیر را وارد کنید</p>
+                    <h3 class="text-xl md:text-2xl font-bold text-white">ورود به پنل مدیریت</h3>
+                    <p class="text-xs text-gray-400">ایمیل و رمز عبور مدیر را وارد کنید</p>
                 </div>
 
-                <form onsubmit="handleLogin(event)" class="space-y-4">
+                <form onsubmit="handleLogin(event)" class="space-y-3">
                     <div>
                         <label class="block text-xs font-semibold text-gray-300 mb-1">ایمیل مدیر</label>
-                        <input type="email" id="login-email" required placeholder="vadelvadelian@gmail.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                        <input type="email" id="login-email" required placeholder="vadelvadelian@gmail.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-gray-300 mb-1">رمز عبور</label>
-                        <input type="password" id="login-password" required placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                        <input type="password" id="login-password" required placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
                     </div>
                     <p id="login-error" class="text-red-400 text-xs hidden">ایمیل یا رمز عبور اشتباه است!</p>
-                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 font-bold rounded-xl shadow-lg shadow-purple-600/30 transition-all">
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 font-bold text-sm rounded-xl shadow-lg shadow-purple-600/30 transition-all">
                         ورود به مدیریت
                     </button>
                 </form>
             </div>
 
             <!-- Dashboard Section -->
-            <div id="dashboard-section" class="space-y-6 hidden">
-                <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                        <i data-lucide="sliders" class="text-purple-400"></i>
-                        <span>تنظیمات و ویرایش بخش‌های سایت</span>
+            <div id="dashboard-section" class="space-y-5 hidden">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <h3 class="text-base md:text-lg font-bold text-white flex items-center gap-2">
+                        <i data-lucide="sliders" class="w-4 h-4 text-purple-400"></i>
+                        <span>ویرایش بخش‌های سایت</span>
                     </h3>
                     <button onclick="handleLogout()" class="text-xs text-red-400 hover:underline">خروج</button>
                 </div>
 
-                <form onsubmit="saveSiteData(event)" class="space-y-5">
-                    <div class="space-y-3">
-                        <h4 class="text-sm font-bold text-purple-300 border-b border-purple-500/20 pb-1">بخش اصلی (Hero)</h4>
+                <form onsubmit="saveSiteData(event)" class="space-y-4">
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">بخش اصلی (Hero)</h4>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">نوار بالایی (Badge)</label>
-                            <input type="text" id="edit-badge" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white">
+                            <label class="block text-[11px] text-gray-400 mb-1">نوار بالایی (Badge)</label>
+                            <input type="text" id="edit-badge" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">عنوان اصلی سایت</label>
-                            <input type="text" id="edit-title" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white">
+                            <label class="block text-[11px] text-gray-400 mb-1">عنوان اصلی سایت</label>
+                            <input type="text" id="edit-title" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">توضیحات کوتاه (بیوگرافی)</label>
-                            <textarea id="edit-bio" rows="2" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="space-y-3">
-                        <h4 class="text-sm font-bold text-purple-300 border-b border-purple-500/20 pb-1">بخش درباره من</h4>
-                        <div>
-                            <label class="block text-xs text-gray-400 mb-1">متن کامل درباره من</label>
-                            <textarea id="edit-about-text" rows="3" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white"></textarea>
+                            <label class="block text-[11px] text-gray-400 mb-1">توضیحات کوتاه</label>
+                            <textarea id="edit-bio" rows="2" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white"></textarea>
                         </div>
                     </div>
 
-                    <div class="space-y-3">
-                        <h4 class="text-sm font-bold text-purple-300 border-b border-purple-500/20 pb-1">افزودن مهارت جدید</h4>
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">بخش درباره من</h4>
+                        <div>
+                            <label class="block text-[11px] text-gray-400 mb-1">متن درباره من</label>
+                            <textarea id="edit-about-text" rows="3" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">افزودن مهارت جدید</h4>
                         <div class="flex gap-2">
-                            <input type="text" id="new-skill-title" placeholder="نام مهارت" class="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white">
-                            <button type="button" onclick="addNewSkill()" class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-xl text-xs font-bold">افزودن</button>
+                            <input type="text" id="new-skill-title" placeholder="نام مهارت" class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
+                            <button type="button" onclick="addNewSkill()" class="px-3 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-xs font-bold">افزودن</button>
                         </div>
                     </div>
 
-                    <div class="space-y-3">
-                        <h4 class="text-sm font-bold text-purple-300 border-b border-purple-500/20 pb-1">اطلاعات تماس</h4>
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">اطلاعات تماس</h4>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-1">ایمیل عمومی</label>
-                            <input type="email" id="edit-email" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white">
+                            <label class="block text-[11px] text-gray-400 mb-1">ایمیل عمومی</label>
+                            <input type="email" id="edit-email" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
                         </div>
                     </div>
 
-                    <button type="submit" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 font-bold rounded-xl text-white shadow-lg shadow-emerald-600/25 transition-all">
-                        ذخیره و اعمال تغییرات روی سایت
+                    <button type="submit" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 font-bold rounded-xl text-xs text-white shadow-lg shadow-emerald-600/25 transition-all">
+                        ذخیره و اعمال تغییرات
                     </button>
                 </form>
             </div>
@@ -265,6 +269,11 @@
             skills: ["HTML / CSS / JS", "Tailwind CSS", "Git & GitHub", "AI Tools"]
         };
 
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
         function renderSite() {
             document.getElementById('display-badge').innerText = siteData.badge;
             document.getElementById('display-title').innerText = siteData.title;
@@ -275,9 +284,9 @@
 
             const skillsContainer = document.getElementById('skills-container');
             skillsContainer.innerHTML = siteData.skills.map(skill => `
-                <div class="glass-card rounded-2xl p-5 text-center space-y-2">
-                    <i data-lucide="check-circle-2" class="w-7 h-7 text-purple-400 mx-auto"></i>
-                    <h4 class="font-bold text-white">${skill}</h4>
+                <div class="glass-card rounded-xl p-3.5 md:p-5 text-center space-y-1.5">
+                    <i data-lucide="check-circle-2" class="w-5 h-5 md:w-7 md:h-7 text-purple-400 mx-auto"></i>
+                    <h4 class="font-bold text-xs md:text-sm text-white">${skill}</h4>
                 </div>
             `).join('');
 
