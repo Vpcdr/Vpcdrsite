@@ -1,358 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>وب‌سایت شخصی | پنل مدیریت کامل</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Vazirmatn Font -->
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .glass {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            transition: all 0.3s ease;
-        }
-        .glow-bg {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.3;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>وب‌سایت شخصی | نمونه‌کارها و رزومه</title>
+<meta name="description" content="وب‌سایت شخصی و معرفی خدمات">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{--bg:#090e1b;--panel:#111a2c;--panel2:#151f34;--line:#26334b;--text:#f4f7ff;--muted:#9aa8bd;--a:#8b5cf6;--b:#22d3ee;--ok:#34d399;--danger:#fb7185}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 0%,#30205b55,transparent 32rem),radial-gradient(circle at 5% 45%,#07598533,transparent 28rem),var(--bg);color:var(--text);font-family:Vazirmatn,sans-serif;line-height:1.8}button,input,textarea,select{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.glass{background:#ffffff08;border:1px solid #ffffff16;backdrop-filter:blur(18px);box-shadow:0 18px 55px #0003}.nav{position:sticky;top:10px;z-index:5;margin:10px auto;width:min(1120px,94%);border-radius:18px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.4px;background:linear-gradient(90deg,#c4b5fd,#67e8f9);color:transparent;background-clip:text}.navlinks{display:flex;gap:24px;color:#c5cee0;font-size:14px}.navlinks a:hover{color:#c4b5fd}.btn{border:0;border-radius:12px;padding:10px 17px;color:white;background:linear-gradient(110deg,var(--a),#4f46e5);font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.secondary{background:#ffffff0d;border:1px solid var(--line)}.btn.danger{background:#7f1d36}.btn.small{padding:6px 10px;font-size:12px}.hero{padding:100px 0 85px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #8b5cf655;background:#8b5cf61a;color:#d8caff;border-radius:99px;padding:5px 14px;font-size:13px}.hero h1{font-size:clamp(32px,6vw,62px);line-height:1.35;margin:22px auto 14px;max-width:850px}.gradient{background:linear-gradient(90deg,#c4b5fd,#67e8f9);color:transparent;background-clip:text}.lead{color:var(--muted);max-width:700px;margin:0 auto 26px}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.section{padding:48px 0}.section-head{text-align:center;margin-bottom:26px}.section-head h2{font-size:28px;margin:0}.section-head p{color:var(--muted);font-size:14px;margin:4px}.card{background:linear-gradient(145deg,#ffffff0c,#ffffff05);border:1px solid #ffffff13;border-radius:22px;padding:25px}.about{color:#c6d0df}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.skill,.project{background:#ffffff08;border:1px solid #ffffff13;border-radius:17px;padding:18px}.skill{text-align:center}.skill i{color:#a78bfa}.skill h3{font-size:14px;margin:8px 0 0}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project img{width:100%;height:155px;object-fit:cover;border-radius:12px;background:#1e293b}.project h3{margin:10px 0 3px}.project p{font-size:13px;color:var(--muted);margin:0 0 10px}.contact{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}.contact a{padding:11px 15px;border:1px solid var(--line);border-radius:12px;background:#ffffff08;font-size:14px}.footer{text-align:center;padding:30px 0;color:#748198;border-top:1px solid #ffffff12;font-size:13px}
+.overlay{position:fixed;inset:0;background:#030712d9;backdrop-filter:blur(10px);z-index:20;display:none;align-items:center;justify-content:center;padding:14px}.overlay.show{display:flex}.modal{width:min(470px,100%);padding:26px;border-radius:22px;background:#111a2c;border:1px solid #ffffff20;max-height:92vh;overflow:auto}.modal h2{margin:0 0 5px}.muted{color:var(--muted);font-size:13px}.field{display:grid;gap:5px;margin:12px 0}.field label{font-size:13px;color:#cbd5e1}.field input,.field textarea,.field select{width:100%;background:#080f1e;border:1px solid #2b3850;color:white;border-radius:10px;padding:10px 12px;outline:none}.field input:focus,.field textarea:focus{border-color:#8b5cf6}.field textarea{min-height:90px;resize:vertical}.full{width:100%}.error{color:#fda4af;font-size:12px;display:none}.admin{position:fixed;inset:0;z-index:30;background:#080d18;display:none;overflow:auto}.admin.show{display:block}.adminbar{height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line);background:#0e1728;position:sticky;top:0;z-index:2}.adminlayout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 66px)}.sidebar{padding:20px 14px;border-left:1px solid var(--line);background:#0d1525}.sidebtn{width:100%;text-align:right;padding:11px 12px;border:0;background:transparent;color:#aab7ca;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;margin:3px 0}.sidebtn.active,.sidebtn:hover{background:#8b5cf622;color:#ddd2ff}.adminmain{padding:25px;max-width:1050px;width:100%;margin:auto}.tab{display:none}.tab.active{display:block}.tabtitle{margin:0 0 4px;font-size:24px}.tabdesc{color:var(--muted);font-size:13px;margin:0 0 20px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.admincard{padding:20px;background:#111a2c;border:1px solid var(--line);border-radius:16px;margin-bottom:16px}.admincard h3{margin:0 0 12px;font-size:16px}.items{display:grid;gap:9px}.item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#ffffff05}.item span{overflow-wrap:anywhere}.itemactions{display:flex;gap:6px;flex-shrink:0}.hint{font-size:12px;color:#fbbf24;margin-top:8px}.toast{position:fixed;bottom:20px;left:20px;z-index:60;background:#13243a;border:1px solid #3b5574;padding:11px 16px;border-radius:12px;display:none}.toast.show{display:block}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr 1fr}.adminlayout{grid-template-columns:1fr}.sidebar{display:flex;overflow:auto;border-left:0;border-bottom:1px solid var(--line);padding:8px}.sidebtn{white-space:nowrap;width:auto}.adminmain{padding:16px}.navlinks{display:none}.hero{padding:75px 0 55px}}
+@media(max-width:520px){.projects{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.hero h1{font-size:34px}.section{padding:34px 0}.adminbar{padding:0 12px}.card{padding:18px}}
+</style>
 </head>
-<body class="relative min-h-screen selection:bg-purple-500 selection:text-white">
+<body>
+<header class="nav glass">
+  <a class="brand" href="#home" id="brandName">PORTFOLIO</a>
+  <nav class="navlinks"><a href="#home">خانه</a><a href="#about">درباره من</a><a href="#skills">مهارت‌ها</a><a href="#projects">نمونه‌کارها</a><a href="#contact">تماس</a></nav>
+  <button class="btn small" onclick="openLogin()"><i data-lucide="shield-check"></i> مدیریت</button>
+</header>
+<main class="wrap">
+  <section class="hero" id="home">
+    <span class="eyebrow"><i data-lucide="sparkles"></i><span id="vBadge">خوش آمدید | وب‌سایت شخصی</span></span>
+    <h1 id="vTitle">ایده‌ها را به <span class="gradient">تجربه‌های دیجیتال</span> تبدیل می‌کنم</h1>
+    <p class="lead" id="vBio">معرفی کوتاه شما، تخصص‌ها و خدماتی که ارائه می‌دهید؛ ساده، حرفه‌ای و ماندگار.</p>
+    <div class="actions"><a class="btn" href="#contact">ارتباط با من <i data-lucide="arrow-left"></i></a><a class="btn secondary" href="#projects">مشاهده نمونه‌کارها</a></div>
+  </section>
+  <section class="section" id="about"><div class="section-head"><h2>درباره من</h2><p>آشنایی بیشتر با مسیر و فعالیت‌های من</p></div><div class="card about" id="vAbout">اینجا متن معرفی کامل شما نمایش داده می‌شود. از پنل مدیریت می‌توانید این متن را تغییر دهید.</div></section>
+  <section class="section" id="skills"><div class="section-head"><h2>مهارت‌ها و تخصص‌ها</h2><p>توانمندی‌ها و حوزه‌های فعالیت</p></div><div class="grid" id="vSkills"></div></section>
+  <section class="section" id="projects"><div class="section-head"><h2>نمونه‌کارها</h2><p>پروژه‌ها و فعالیت‌های منتخب</p></div><div class="projects" id="vProjects"></div></section>
+  <section class="section" id="contact"><div class="section-head"><h2>راه‌های ارتباطی</h2><p>برای همکاری و دریافت اطلاعات بیشتر در تماس باشید</p></div><div class="contact" id="vContact"></div></section>
+</main>
+<footer class="footer"><div class="wrap">© <span id="year"></span> <span id="vFooter">تمامی حقوق محفوظ است.</span></div></footer>
 
-    <!-- Glowing Backgrounds -->
-    <div class="glow-bg bg-purple-600 top-[-50px] right-[-50px] animate-pulse"></div>
-    <div class="glow-bg bg-blue-600 bottom-[-50px] left-[-50px] animate-pulse" style="animation-delay: 2s;"></div>
+<div class="overlay" id="loginModal">
+ <div class="modal">
+  <div style="display:flex;justify-content:space-between;align-items:center"><div><h2>ورود مدیر</h2><div class="muted">برای مدیریت محتوای وب‌سایت وارد شوید.</div></div><button class="btn secondary small" onclick="closeLogin()">✕</button></div>
+  <form id="loginForm">
+   <div class="field"><label>ایمیل مدیر</label><input id="loginEmail" type="email" autocomplete="username" required></div>
+   <div class="field"><label>رمز عبور</label><input id="loginPass" type="password" autocomplete="current-password" required></div>
+   <p class="error" id="loginError">اطلاعات ورود صحیح نیست.</p>
+   <button class="btn full" type="submit">ورود به پنل مدیریت</button>
+  </form>
+  <p class="hint">نکته امنیتی: ورود این نسخه صرفاً نمایشی و سمت مرورگر است؛ برای انتشار عمومی، احراز هویت واقعی سمت سرور ضروری است.</p>
+ </div>
+</div>
 
-    <!-- Responsive Floating Glass Navbar -->
-    <nav class="fixed top-3 left-1/2 -translate-x-1/2 z-40 w-[94%] max-w-6xl">
-        <div class="glass rounded-2xl md:rounded-full px-4 py-3 flex items-center justify-between shadow-2xl">
-            <span class="text-lg md:text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
-                PORTFOLIO
-            </span>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-6 space-x-reverse text-sm font-medium text-gray-300">
-                <a href="#hero" class="hover:text-purple-400 transition-colors">خانه</a>
-                <a href="#about" class="hover:text-purple-400 transition-colors">درباره من</a>
-                <a href="#skills" class="hover:text-purple-400 transition-colors">مهارت‌ها</a>
-                <a href="#contact" class="hover:text-purple-400 transition-colors">تماس</a>
-                <button onclick="openAdminModal()" class="flex items-center gap-1 text-purple-400 hover:text-purple-300 border-r border-white/10 pr-4 font-bold">
-                    <i data-lucide="settings" class="w-4 h-4"></i>
-                    <span>مدیریت</span>
-                </button>
-            </div>
-
-            <div class="hidden md:block">
-                <a href="#contact" class="px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 transition-all shadow-lg shadow-purple-500/25">
-                    ارتباط سریع
-                </a>
-            </div>
-
-            <!-- Mobile Hamburger Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-white p-1">
-                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden glass rounded-2xl mt-2 p-5 space-y-4 shadow-2xl border border-white/10">
-            <a href="#hero" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">خانه</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">درباره من</a>
-            <a href="#skills" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">مهارت‌ها</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-purple-400 py-1">تماس</a>
-            <hr class="border-white/10">
-            <button onclick="toggleMobileMenu(); openAdminModal();" class="w-full text-right flex items-center gap-2 text-purple-400 font-bold py-1">
-                <i data-lucide="settings" class="w-4 h-4"></i>
-                <span>ورود به پنل مدیریت</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Main Mobile Optimized Container -->
-    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-28 md:pt-36 pb-16 space-y-20 md:space-y-28">
-
-        <!-- Hero Section -->
-        <section id="hero" class="flex flex-col items-center text-center space-y-5 pt-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-purple-500/30 text-purple-300 text-xs md:text-sm">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-400"></i>
-                <span id="display-badge">خوش آمدید | رزومه و وب‌سایت تعاملی</span>
-            </div>
-            
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight max-w-4xl" id="display-title">
-                طراحی و توسعه تجربه‌های مدرن دیجیتال
-            </h1>
-            
-            <p class="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl leading-relaxed" id="display-bio">
-                علاقه‌مند به خلق ایده‌های نوآورانه، برنامه‌نویسی وب و توسعه رابط‌های کاربری چشم‌نواز با استانداردهای روز دنیای وب.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto pt-2">
-                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:opacity-95 transition-all shadow-xl shadow-purple-600/30 text-center text-sm md:text-base">
-                    ارتباط با من
-                </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="space-y-5">
-            <div class="text-center space-y-1">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white">درباره من</h2>
-                <p class="text-gray-400 text-xs md:text-sm">مسیر حرفه‌ای و رویکرد کاری</p>
-            </div>
-
-            <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-8 space-y-3">
-                <p class="text-gray-300 leading-relaxed text-sm md:text-base text-justify md:text-right" id="display-about-text">
-                    با تمرکز بر توسعه وب و به‌کارگیری ابزارهای پیشرفته، هدف من ارائه راه‌حل‌های هوشمندانه، کاربردی و پرسرعت برای پروژه‌های گوناگون است. همواره در حال یادگیری فناوری‌های جدید و بهبود مهارت‌های فنی هستم.
-                </p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="space-y-5">
-            <div class="text-center space-y-1">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white">مهارت‌های تخصصی</h2>
-                <p class="text-gray-400 text-xs md:text-sm">ابزارها و دانش فنی</p>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4" id="skills-container">
-                <!-- Skills Render Here -->
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="space-y-5">
-            <div class="glass-card rounded-2xl md:rounded-3xl p-6 md:p-10 border border-purple-500/20">
-                <div class="max-w-2xl space-y-4 text-center md:text-right">
-                    <h2 class="text-2xl md:text-3xl font-black text-white">راه‌های ارتباطی</h2>
-                    <div class="flex flex-col sm:flex-row gap-3 pt-2" id="contact-container">
-                        <a id="display-email-link" href="mailto:vadelvadelian@gmail.com" class="glass px-5 py-3 rounded-xl flex items-center justify-center md:justify-start gap-3 hover:bg-white/10 transition-all text-xs md:text-sm">
-                            <i data-lucide="mail" class="w-4 h-4 text-purple-400"></i>
-                            <span id="display-email" class="break-all">vadelvadelian@gmail.com</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ADMIN MODAL -->
-    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
-        <div class="glass border border-purple-500/30 rounded-2xl md:rounded-3xl p-5 md:p-8 w-full max-w-xl relative max-h-[92vh] overflow-y-auto">
-            
-            <button onclick="closeAdminModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white p-1">
-                <i data-lucide="x" class="w-5 h-5 md:w-6 md:h-6"></i>
-            </button>
-
-            <!-- Login Section -->
-            <div id="login-section" class="space-y-5 py-2">
-                <div class="text-center space-y-1">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 text-purple-400 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-2">
-                        <i data-lucide="lock" class="w-5 h-5 md:w-6 md:h-6"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-white">ورود به پنل مدیریت</h3>
-                    <p class="text-xs text-gray-400">ایمیل و رمز عبور مدیر را وارد کنید</p>
-                </div>
-
-                <form onsubmit="handleLogin(event)" class="space-y-3">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 mb-1">ایمیل مدیر</label>
-                        <input type="email" id="login-email" required placeholder="vadelvadelian@gmail.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-300 mb-1">رمز عبور</label>
-                        <input type="password" id="login-password" required placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-                    </div>
-                    <p id="login-error" class="text-red-400 text-xs hidden">ایمیل یا رمز عبور اشتباه است!</p>
-                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 font-bold text-sm rounded-xl shadow-lg shadow-purple-600/30 transition-all">
-                        ورود به مدیریت
-                    </button>
-                </form>
-            </div>
-
-            <!-- Dashboard Section -->
-            <div id="dashboard-section" class="space-y-5 hidden">
-                <div class="flex items-center justify-between border-b border-white/10 pb-3">
-                    <h3 class="text-base md:text-lg font-bold text-white flex items-center gap-2">
-                        <i data-lucide="sliders" class="w-4 h-4 text-purple-400"></i>
-                        <span>ویرایش بخش‌های سایت</span>
-                    </h3>
-                    <button onclick="handleLogout()" class="text-xs text-red-400 hover:underline">خروج</button>
-                </div>
-
-                <form onsubmit="saveSiteData(event)" class="space-y-4">
-                    <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">بخش اصلی (Hero)</h4>
-                        <div>
-                            <label class="block text-[11px] text-gray-400 mb-1">نوار بالایی (Badge)</label>
-                            <input type="text" id="edit-badge" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] text-gray-400 mb-1">عنوان اصلی سایت</label>
-                            <input type="text" id="edit-title" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] text-gray-400 mb-1">توضیحات کوتاه</label>
-                            <textarea id="edit-bio" rows="2" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">بخش درباره من</h4>
-                        <div>
-                            <label class="block text-[11px] text-gray-400 mb-1">متن درباره من</label>
-                            <textarea id="edit-about-text" rows="3" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">افزودن مهارت جدید</h4>
-                        <div class="flex gap-2">
-                            <input type="text" id="new-skill-title" placeholder="نام مهارت" class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
-                            <button type="button" onclick="addNewSkill()" class="px-3 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-xs font-bold">افزودن</button>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-purple-300 border-b border-purple-500/20 pb-1">اطلاعات تماس</h4>
-                        <div>
-                            <label class="block text-[11px] text-gray-400 mb-1">ایمیل عمومی</label>
-                            <input type="email" id="edit-email" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 font-bold rounded-xl text-xs text-white shadow-lg shadow-emerald-600/25 transition-all">
-                        ذخیره و اعمال تغییرات
-                    </button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        const ADMIN_EMAIL = "vadelvadelian@gmail.com";
-        const ADMIN_PASS = "vS2g@50459#D0%F";
-
-        let siteData = JSON.parse(localStorage.getItem('site_data')) || {
-            badge: "خوش آمدید | رزومه و وب‌سایت تعاملی",
-            title: "طراحی و توسعه تجربه‌های مدرن دیجیتال",
-            bio: "علاقه‌مند به خلق ایده‌های نوآورانه، برنامه‌نویسی وب و توسعه رابط‌های کاربری چشم‌نواز با استانداردهای روز دنیای وب.",
-            aboutText: "با تمرکز بر توسعه وب و به‌کارگیری ابزارهای پیشرفته، هدف من ارائه راه‌حل‌های هوشمندانه، کاربردی و پرسرعت برای پروژه‌های گوناگون است.",
-            email: "vadelvadelian@gmail.com",
-            skills: ["HTML / CSS / JS", "Tailwind CSS", "Git & GitHub", "AI Tools"]
-        };
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function renderSite() {
-            document.getElementById('display-badge').innerText = siteData.badge;
-            document.getElementById('display-title').innerText = siteData.title;
-            document.getElementById('display-bio').innerText = siteData.bio;
-            document.getElementById('display-about-text').innerText = siteData.aboutText;
-            document.getElementById('display-email').innerText = siteData.email;
-            document.getElementById('display-email-link').href = `mailto:${siteData.email}`;
-
-            const skillsContainer = document.getElementById('skills-container');
-            skillsContainer.innerHTML = siteData.skills.map(skill => `
-                <div class="glass-card rounded-xl p-3.5 md:p-5 text-center space-y-1.5">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 md:w-7 md:h-7 text-purple-400 mx-auto"></i>
-                    <h4 class="font-bold text-xs md:text-sm text-white">${skill}</h4>
-                </div>
-            `).join('');
-
-            lucide.createIcons();
-        }
-
-        function openAdminModal() {
-            document.getElementById('admin-modal').classList.remove('hidden');
-        }
-
-        function closeAdminModal() {
-            document.getElementById('admin-modal').classList.add('hidden');
-        }
-
-        function handleLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('login-email').value;
-            const pass = document.getElementById('login-password').value;
-
-            if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
-                document.getElementById('login-section').classList.add('hidden');
-                document.getElementById('dashboard-section').classList.remove('hidden');
-                populateDashboardInputs();
-            } else {
-                document.getElementById('login-error').classList.remove('hidden');
-            }
-        }
-
-        function handleLogout() {
-            document.getElementById('dashboard-section').classList.add('hidden');
-            document.getElementById('login-section').classList.remove('hidden');
-            document.getElementById('login-password').value = '';
-        }
-
-        function populateDashboardInputs() {
-            document.getElementById('edit-badge').value = siteData.badge;
-            document.getElementById('edit-title').value = siteData.title;
-            document.getElementById('edit-bio').value = siteData.bio;
-            document.getElementById('edit-about-text').value = siteData.aboutText;
-            document.getElementById('edit-email').value = siteData.email;
-        }
-
-        function addNewSkill() {
-            const input = document.getElementById('new-skill-title');
-            if (input.value.trim() !== '') {
-                siteData.skills.push(input.value.trim());
-                input.value = '';
-                alert('مهارت جدید اضافه شد.');
-            }
-        }
-
-        function saveSiteData(e) {
-            e.preventDefault();
-            siteData.badge = document.getElementById('edit-badge').value;
-            siteData.title = document.getElementById('edit-title').value;
-            siteData.bio = document.getElementById('edit-bio').value;
-            siteData.aboutText = document.getElementById('edit-about-text').value;
-            siteData.email = document.getElementById('edit-email').value;
-
-            localStorage.setItem('site_data', JSON.stringify(siteData));
-            renderSite();
-            closeAdminModal();
-            alert('تغییرات ذخیره شد!');
-        }
-
-        renderSite();
-    </script>
+<div class="admin" id="admin">
+ <div class="adminbar"><strong>پنل مدیریت وب‌سایت</strong><div style="display:flex;gap:8px"><button class="btn secondary small" onclick="closeAdmin()">مشاهده سایت</button><button class="btn danger small" onclick="logout()">خروج</button></div></div>
+ <div class="adminlayout">
+  <aside class="sidebar">
+   <button class="sidebtn active" data-tab="general"><i data-lucide="layout-dashboard"></i> نمای کلی و صفحه اصلی</button>
+   <button class="sidebtn" data-tab="aboutTab"><i data-lucide="user"></i> درباره من</button>
+   <button class="sidebtn" data-tab="skillsTab"><i data-lucide="brain"></i> مهارت‌ها</button>
+   <button class="sidebtn" data-tab="projectsTab"><i data-lucide="briefcase-business"></i> نمونه‌کارها</button>
+   <button class="sidebtn" data-tab="contactTab"><i data-lucide="contact"></i> راه‌های ارتباطی</button>
+   <button class="sidebtn" data-tab="settingsTab"><i data-lucide="settings"></i> تنظیمات و پشتیبان</button>
+  </aside>
+  <div class="adminmain">
+   <section class="tab active" id="general"><h2 class="tabtitle">نمای کلی و صفحه اصلی</h2><p class="tabdesc">اطلاعاتی که در ابتدای ورود بازدیدکننده دیده می‌شود.</p>
+    <div class="admincard"><h3>محتوای سربرگ</h3><div class="field"><label>نام یا عنوان برند</label><input id="brand"></div><div class="field"><label>متن برچسب بالای عنوان</label><input id="badge"></div><div class="field"><label>عنوان اصلی</label><input id="title"></div><div class="field"><label>توضیح کوتاه</label><textarea id="bio"></textarea></div><button class="btn" onclick="saveGeneral()">ذخیره صفحه اصلی</button></div>
+   </section>
+   <section class="tab" id="aboutTab"><h2 class="tabtitle">درباره من</h2><p class="tabdesc">معرفی کامل، سوابق و توضیحات حرفه‌ای خود را وارد کنید.</p><div class="admincard"><div class="field"><label>متن درباره من</label><textarea id="aboutText" style="min-height:190px"></textarea></div><button class="btn" onclick="saveAbout()">ذخیره توضیحات</button></div></section>
+   <section class="tab" id="skillsTab"><h2 class="tabtitle">مدیریت مهارت‌ها</h2><p class="tabdesc">مهارت‌های جدید اضافه کنید یا موارد قبلی را ویرایش و حذف کنید.</p><div class="admincard"><div class="field"><label>نام مهارت</label><input id="skillName" placeholder="مثلاً طراحی رابط کاربری"></div><button class="btn" onclick="addSkill()">افزودن مهارت</button></div><div class="admincard"><h3>فهرست مهارت‌ها</h3><div class="items" id="skillList"></div></div></section>
+   <section class="tab" id="projectsTab"><h2 class="tabtitle">مدیریت نمونه‌کارها</h2><p class="tabdesc">برای هر پروژه عنوان، توضیح، تصویر و لینک ثبت کنید.</p><div class="admincard"><input type="hidden" id="projectId"><div class="field"><label>عنوان پروژه</label><input id="projectTitle"></div><div class="field"><label>توضیحات</label><textarea id="projectDesc"></textarea></div><div class="field"><label>آدرس تصویر (URL)</label><input id="projectImage" placeholder="https://..."></div><div class="field"><label>لینک پروژه (اختیاری)</label><input id="projectUrl" placeholder="https://..."></div><button class="btn" onclick="saveProject()">ذخیره پروژه</button> <button class="btn secondary" onclick="clearProjectForm()">پاک کردن فرم</button></div><div class="admincard"><h3>پروژه‌های ثبت‌شده</h3><div class="items" id="projectList"></div></div></section>
+   <section class="tab" id="contactTab"><h2 class="tabtitle">راه‌های ارتباطی</h2><p class="tabdesc">اطلاعات تماس عمومی که در سایت نمایش داده می‌شود.</p><div class="admincard"><div class="formgrid"><div class="field"><label>ایمیل</label><input id="email" type="email"></div><div class="field"><label>شماره تماس</label><input id="phone"></div><div class="field"><label>لینک واتساپ</label><input id="whatsapp" placeholder="https://wa.me/..."></div><div class="field"><label>لینک اینستاگرام</label><input id="instagram" placeholder="https://instagram.com/..."></div><div class="field"><label>لینک تلگرام</label><input id="telegram" placeholder="https://t.me/..."></div></div><button class="btn" onclick="saveContact()">ذخیره راه‌های ارتباطی</button></div></section>
+   <section class="tab" id="settingsTab"><h2 class="tabtitle">تنظیمات و پشتیبان‌گیری</h2><p class="tabdesc">اطلاعات سایت را ذخیره یا به دستگاه دیگری منتقل کنید.</p><div class="admincard"><h3>تنظیمات عمومی</h3><div class="field"><label>عنوان صفحه مرورگر</label><input id="siteTitle"></div><div class="field"><label>توضیحات موتورهای جست‌وجو</label><textarea id="siteDescription"></textarea></div><div class="field"><label>متن پایین سایت</label><input id="footerText"></div><button class="btn" onclick="saveSettings()">ذخیره تنظیمات</button></div><div class="admincard"><h3>پشتیبان‌گیری</h3><p class="muted">فایل JSON شامل محتوای سایت را دریافت کنید یا نسخه پشتیبان قبلی را بازیابی کنید.</p><div class="actions" style="justify-content:flex-start"><button class="btn" onclick="exportData()">دریافت پشتیبان</button><label class="btn secondary">بازیابی پشتیبان<input type="file" accept="application/json" hidden onchange="importData(event)"></label></div><p class="hint">اطلاعات این نسخه در حافظه مرورگر همین دستگاه ذخیره می‌شود؛ پاک‌کردن داده‌های مرورگر ممکن است آن‌ها را حذف کند.</p></div></section>
+  </div>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='portfolio_site_v2';
+const ADMIN_EMAIL='vadelvadelian@gmail.com';
+// نسخه نمایشی: رمز عبور در مرورگر ذخیره نمی‌شود، اما این روش جایگزین احراز هویت سمت سرور نیست.
+const DEMO_PASSWORD='CHANGE_THIS_PASSWORD_BEFORE_TESTING';
+const defaults={
+ brand:'PORTFOLIO',badge:'خوش آمدید | وب‌سایت شخصی',title:'ایده‌ها را به تجربه‌های دیجیتال تبدیل می‌کنم',
+ bio:'معرفی کوتاه شما، تخصص‌ها و خدماتی که ارائه می‌دهید؛ ساده، حرفه‌ای و ماندگار.',
+ about:'اینجا متن معرفی کامل شما نمایش داده می‌شود. درباره تجربه، تخصص، اهداف و خدمات خود بنویسید.',
+ skills:['طراحی و توسعه وب','HTML / CSS / JavaScript','طراحی رابط کاربری','ابزارهای هوش مصنوعی'],
+ projects:[{id:'p1',title:'وب‌سایت شخصی',desc:'نمونه‌ای از طراحی و توسعه وب‌سایت مدرن و واکنش‌گرا.',image:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',url:''}],
+ contact:{email:'',phone:'',whatsapp:'',instagram:'',telegram:''},
+ settings:{title:'وب‌سایت شخصی | نمونه‌کارها و رزومه',description:'وب‌سایت شخصی و معرفی خدمات',footer:'تمامی حقوق محفوظ است.'}
+};
+let data=loadData();
+function loadData(){try{return {...structuredClone(defaults),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{return structuredClone(defaults)}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(data));render();toast('تغییرات ذخیره شد.')}
+function safe(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function validUrl(u){try{let x=new URL(u);return ['http:','https:'].includes(x.protocol)?x.href:'#'}catch{return '#'}}
+function render(){
+ document.getElementById('brandName').textContent=data.brand||'PORTFOLIO';document.getElementById('vBadge').textContent=data.badge;document.getElementById('vTitle').textContent=data.title;document.getElementById('vBio').textContent=data.bio;document.getElementById('vAbout').textContent=data.about;document.getElementById('vFooter').textContent=data.settings.footer;document.getElementById('year').textContent=new Date().getFullYear();document.title=data.settings.title||defaults.settings.title;
+ document.getElementById('vSkills').innerHTML=data.skills.map(s=>`<div class="skill"><i data-lucide="badge-check"></i><h3>${safe(s)}</h3></div>`).join('');
+ document.getElementById('vProjects').innerHTML=data.projects.length?data.projects.map(p=>`<article class="project"><img src="${safe(validUrl(p.image))}" alt="${safe(p.title)}" loading="lazy" onerror="this.style.display='none'"><h3>${safe(p.title)}</h3><p>${safe(p.desc)}</p>${p.url?`<a class="btn small" href="${safe(validUrl(p.url))}" target="_blank" rel="noopener">مشاهده پروژه ↗</a>`:''}</article>`).join(''):'<p class="muted">هنوز نمونه‌کاری ثبت نشده است.</p>';
+ const c=data.contact, links=[];if(c.email)links.push(`<a href="mailto:${safe(c.email)}">✉ ${safe(c.email)}</a>`);if(c.phone)links.push(`<a href="tel:${safe(c.phone)}">☎ ${safe(c.phone)}</a>`);[['whatsapp','واتساپ'],['instagram','اینستاگرام'],['telegram','تلگرام']].forEach(([k,n])=>{if(c[k])links.push(`<a href="${safe(validUrl(c[k]))}" target="_blank" rel="noopener">${n} ↗</a>`)});document.getElementById('vContact').innerHTML=links.join('')||'<span class="muted">اطلاعات تماس هنوز ثبت نشده است.</span>';
+ if(window.lucide)lucide.createIcons();
+}
+function toast(t){let e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2300)}
+function openLogin(){document.getElementById('loginModal').classList.add('show')}
+function closeLogin(){document.getElementById('loginModal').classList.remove('show')}
+document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();let email=document.getElementById('loginEmail').value.trim(),pass=document.getElementById('loginPass').value;if(email===ADMIN_EMAIL&&pass===DEMO_PASSWORD){closeLogin();openAdmin();document.getElementById('loginError').style.display='none';}else document.getElementById('loginError').style.display='block';});
+function openAdmin(){document.getElementById('admin').classList.add('show');fillForms();showTab('general')}
+function closeAdmin(){document.getElementById('admin').classList.remove('show')}
+function logout(){closeAdmin();document.getElementById('loginPass').value=''}
+document.querySelectorAll('.sidebtn').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+function showTab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.id===id));document.querySelectorAll('.sidebtn').forEach(b=>b.classList.toggle('active',b.dataset.tab===id))}
+function val(id){return document.getElementById(id).value.trim()}
+function fillForms(){
+ ['brand','badge','title','bio'].forEach(k=>document.getElementById(k).value=data[k]||'');document.getElementById('aboutText').value=data.about||'';
+ ['email','phone','whatsapp','instagram','telegram'].forEach(k=>document.getElementById(k).value=data.contact[k]||'');
+ document.getElementById('siteTitle').value=data.settings.title||'';document.getElementById('siteDescription').value=data.settings.description||'';document.getElementById('footerText').value=data.settings.footer||'';renderLists();
+}
+function saveGeneral(){['brand','badge','title','bio'].forEach(k=>data[k]=val(k));persist()}
+function saveAbout(){data.about=val('aboutText');persist()}
+function addSkill(){let s=val('skillName');if(!s)return toast('نام مهارت را وارد کنید.');data.skills.push(s);document.getElementById('skillName').value='';persist();renderLists()}
+function editSkill(i){let s=prompt('نام جدید مهارت:',data.skills[i]);if(s!==null&&s.trim()){data.skills[i]=s.trim();persist();renderLists()}}
+function deleteSkill(i){if(confirm('این مهارت حذف شود؟')){data.skills.splice(i,1);persist();renderLists()}}
+function clearProjectForm(){['projectId','projectTitle','projectDesc','projectImage','projectUrl'].forEach(k=>document.getElementById(k).value='')}
+function saveProject(){let title=val('projectTitle');if(!title)return toast('عنوان پروژه الزامی است.');let id=val('projectId')||('p'+Date.now()),p={id,title,desc:val('projectDesc'),image:val('projectImage'),url:val('projectUrl')};let i=data.projects.findIndex(x=>x.id===id);if(i>=0)data.projects[i]=p;else data.projects.push(p);clearProjectForm();persist();renderLists()}
+function editProject(id){let p=data.projects.find(x=>x.id===id);if(!p)return;document.getElementById('projectId').value=p.id;document.getElementById('projectTitle').value=p.title;document.getElementById('projectDesc').value=p.desc;document.getElementById('projectImage').value=p.image;document.getElementById('projectUrl').value=p.url;showTab('projectsTab');window.scrollTo(0,0)}
+function deleteProject(id){if(confirm('این پروژه حذف شود؟')){data.projects=data.projects.filter(p=>p.id!==id);persist();renderLists()}}
+function renderLists(){
+ document.getElementById('skillList').innerHTML=data.skills.map((s,i)=>`<div class="item"><span>${safe(s)}</span><div class="itemactions"><button class="btn secondary small" onclick="editSkill(${i})">ویرایش</button><button class="btn danger small" onclick="deleteSkill(${i})">حذف</button></div></div>`).join('')||'<p class="muted">مهارتی ثبت نشده است.</p>';
+ document.getElementById('projectList').innerHTML=data.projects.map(p=>`<div class="item"><span>${safe(p.title)}</span><div class="itemactions"><button class="btn secondary small" onclick="editProject('${safe(p.id)}')">ویرایش</button><button class="btn danger small" onclick="deleteProject('${safe(p.id)}')">حذف</button></div></div>`).join('')||'<p class="muted">پروژه‌ای ثبت نشده است.</p>';
+}
+function saveContact(){['email','phone','whatsapp','instagram','telegram'].forEach(k=>data.contact[k]=val(k));persist()}
+function saveSettings(){data.settings={title:val('siteTitle'),description:val('siteDescription'),footer:val('footerText')};document.querySelector('meta[name="description"]').content=data.settings.description;persist()}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='portfolio-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x||!Array.isArray(x.skills)||!Array.isArray(x.projects))throw Error();data={...structuredClone(defaults),...x};persist();fillForms();toast('نسخه پشتیبان بازیابی شد.')}catch{toast('فایل پشتیبان معتبر نیست.')}};r.readAsText(f);e.target.value=''}
+render();
+</script>
 </body>
 </html>
